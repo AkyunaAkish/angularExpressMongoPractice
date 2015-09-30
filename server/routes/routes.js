@@ -1,6 +1,7 @@
+require('dotenv').load();
 var express = require('express');
 var router = express.Router();
-var db = require('monk')('localhost/instruments'); // this is the name of the database, make it semantic
+var db = require('monk')(process.env.MONGOLAB_URI); // this is the name of the database, make it semantic
 var Instruments = db.get('instruments'); // the name of the database
 
 router.get('/', function(req, res) {  // INDEX
