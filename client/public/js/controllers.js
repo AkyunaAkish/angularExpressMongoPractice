@@ -1,4 +1,25 @@
-app.controller('InstrumentsController',['$scope',function($scope){
-  $scope.message = "Yo YO YO"
+app.controller('HomeController',['$scope',function($scope){
+
+
+}]);
+
+
+
+app.controller('NewController',['$scope',function($scope){
+
+
+}]);
+
+
+
+app.controller('ShowController',['$scope',function($scope){
+
+
+}]);
+
+
+
+app.controller('EditController',['$scope',function($scope){
+
 
 }]);

@@ -2,7 +2,7 @@ app.config(function($routeProvider){
   $routeProvider
   .when('/', {
     templateUrl: '/partials/home.html',
-    controller: 'InstrumentsController'
+    controller: 'HomeController'
   })
   .otherwise({redirectTo:'/'});
 })
