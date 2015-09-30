@@ -1,0 +1,18 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+img, embed, object, video {
+  max-width: 100%;
+  height: auto; }
+
+body {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background: #4152b0;
+  width: 100%; }
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
