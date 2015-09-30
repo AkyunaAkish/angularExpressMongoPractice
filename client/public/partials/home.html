@@ -1,1 +1,9 @@
 <h1>Hey!</h1>
+{{message}}
+<a href="/#/new"><button>Add New Instrument</button></a><br><br>
+
+<div ng-repeat="instrument in instruments">
+  <span>Instrument: {{instrument.instrumentName}}</span><br>
+  <span>Owner: {{instrument.instrumentOwner}}</span>
+  <br />
+</div>

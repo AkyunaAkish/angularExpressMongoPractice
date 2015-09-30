@@ -15,3 +15,6 @@ body {
 
 .clearfix:after {
   clear: both; }
+
+h1 {
+  color: cyan; }

@@ -1,0 +1,9 @@
+{{message}}
+
+<form ng-submit="addInstrument()" name="newInstrument">
+  <label for="instrumentName">Instrument: </label>
+    <input type="text" name="instrumentName" ng-model="instrument.instrumentName" />
+  <label for="instrumentOwner">Owner: </label>
+    <input type="text" name="instrumentOwner" ng-model="instrument.instrumentOwner" />
+    <input type="submit" value="Add Instrument"></input>
+</form>
