@@ -1,9 +1,10 @@
-<h1>Hey!</h1>
-{{message}}
+
 <a href="/#/new"><button>Add New Instrument</button></a><br><br>
 
-<div ng-repeat="instrument in instruments">
-  <span>Instrument: {{instrument.instrumentName}}</span><br>
-  <span>Owner: {{instrument.instrumentOwner}}</span>
-  <br />
+<div ng-repeat="instrument in instruments" class="instrumentDiv">
+<br>
+  <a ng-href="/#/{{instrument._id}}"><span>Owner: {{instrument.instrumentOwner}}</span></a><br>
+  <a ng-href="/#/{{instrument._id}}">  <span>Instrument: {{instrument.instrumentName}}</span></a><br><br>
+  <button ng-click="deleteInstrument(instrument)">Delete Instrument</button><br><br>
+  <a href="/#/{{instrument._id}}/edit"><button>Edit Instrument</button></a><br><br>
 </div>

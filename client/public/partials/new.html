@@ -1,9 +1,11 @@
-{{message}}
-
+<a href="/#/"><button>Home</button></a><br><br>
+<div class="instrumentDiv">
+  <br>
 <form ng-submit="addInstrument()" name="newInstrument">
   <label for="instrumentName">Instrument: </label>
-    <input type="text" name="instrumentName" ng-model="instrument.instrumentName" />
+    <input type="text" name="instrumentName" ng-model="instrument.instrumentName" /><br><br>
   <label for="instrumentOwner">Owner: </label>
-    <input type="text" name="instrumentOwner" ng-model="instrument.instrumentOwner" />
-    <input type="submit" value="Add Instrument"></input>
+    <input type="text" name="instrumentOwner" ng-model="instrument.instrumentOwner" /><br><br>
+    <button><input type="submit" value="Add Instrument"></input></button><br><br>
 </form>
+</div>
