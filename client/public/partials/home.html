@@ -2,9 +2,21 @@
 <a href="/#/new"><button>Add New Instrument</button></a><br><br>
 
 <div ng-repeat="instrument in instruments" class="instrumentDiv">
-<br>
+  <br>
   <a ng-href="/#/{{instrument._id}}"><span>Owner: {{instrument.instrumentOwner}}</span></a><br>
   <a ng-href="/#/{{instrument._id}}">  <span>Instrument: {{instrument.instrumentName}}</span></a><br><br>
   <button ng-click="deleteInstrument(instrument)">Delete Instrument</button><br><br>
   <a href="/#/{{instrument._id}}/edit"><button>Edit Instrument</button></a><br><br>
+  <form ng-submit="newComment(instrument)">
+    <span>Comment<input type="text" name="commentText" ng-model="instrument.newComment.commentText"></span><br><br>
+    <span>Author<input type="text" name="commentAuthor" ng-model="instrument.newComment.commentAuthor"></span><br><br>
+    <button><input type="submit" value="Submit Comment"></input></button><br><br>
+  </form>
+  <div ng-repeat="comment in instrument.comments">
+    <span>{{comment.commentAuthor}}:</span>
+    <span>{{comment.commentText}}</span><br/>
+    <form ng-submit="deleteComment(instrument, comment)">
+      <button><input type="submit" value="Delete Comment"/></button><br><br>
+    </form>
+  </div>
 </div>

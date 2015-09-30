@@ -16,6 +16,36 @@ app.controller('HomeController', ['$scope', '$http','$route', function($scope, $
       console.log("Failed to reload page.");
     });
   };
+
+  $scope.newComment = function(instrument) { // full record is passed from the view
+    var comment = {
+      commentAuthor:instrument.newComment.commentAuthor,
+      commentText:instrument.newComment.commentText,
+      commentTimestamp: Date.now(),
+    };
+    var comments =instrument.comments || [];
+    comments.push(comment); // push comment to local $scope
+   instrument.newComment.commentAuthor = null; // needed to prevent autofilling fields
+   instrument.newComment.commentText = null; // needed to prevent autofilling fields
+   instrument.comments = comments; // saves new comment locally
+    $http.put('http://localhost:8080/instrumentsApi/' +instrument._id,instrument).then(function(response) { // UPDATE
+      console.log("Comment added.");
+    }, function(response) {
+      console.log("Invalid URL");
+    });
+  };
+
+  $scope.deleteComment = function(instrument, comment) {
+  console.log("Deleting comment.")
+  var index = instrument.comments.indexOf(comment); // find the index of the comment in the array of comments
+  instrument.comments.splice(index, 1); // removes the comment from the array
+  $http.put('http://localhost:8080/instrumentsApi/' + instrument._id, instrument).then(function(response) { // UPDATE
+    console.log("Comment deleted.");
+  }, function(response) {
+    console.log("Invalid URL");
+  });
+};
+
 }]);
 
 
