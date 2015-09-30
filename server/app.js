@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use('/instrumentsApi', instruments); // the first argument is the name of the database, the second argument matches the routes variable set on line 3
+app.use('/instrumentsApi/', instruments); // the first argument is the name of the database, the second argument matches the routes variable set on line 3
 
 app.listen(process.env.PORT || 8080);
 console.log('Server started on localhost://8080');
